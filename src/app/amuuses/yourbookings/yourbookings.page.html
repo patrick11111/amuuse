@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="amuusesMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentGrid()">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <p class="ion-text-center" style="font-size: 25px">Your Bookings</p>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-list>
+          <ion-item *ngFor="let yourbooking of yourbookings" [routerLink]="['./', yourbooking.id]">
+            <ion-col>
+              <ion-img [src]="yourbooking.imageUrl"></ion-img>
+            </ion-col>
+            <ion-label>
+              <ion-card-title> {{ yourbooking.title }} </ion-card-title>
+              <ion-card-subtitle> {{ yourbooking.category }} </ion-card-subtitle>
+              <ion-card-subtitle> Status: Accepted </ion-card-subtitle>
+              <div class="ion-text-justify">
+                <ion-button color="warning">View Contact</ion-button>
+                <br />
+                <ion-button color="medium">Write Review</ion-button>
+              </div>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

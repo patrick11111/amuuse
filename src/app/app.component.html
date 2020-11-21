@@ -1,0 +1,65 @@
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="amuusesMenu">
+    <ion-header>
+        <ion-toolbar>
+          <ion-title>Amuuse</ion-title>
+          <ion-buttons slot="primary">
+            <ion-menu-toggle menu="amuusesMenu">
+              <ion-item lines="none">
+                <ion-icon name="close"></ion-icon>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle menu="amuusesMenu">
+          <ion-item lines="none" routerLink="/tabs/tab3">
+            <ion-icon name="search" slot="start"></ion-icon>
+            <ion-label>Find Your Stars</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="amuusesMenu">
+          <ion-item lines="none" routerLink="/tabs/tab1">
+            <ion-icon name="book" slot="start"></ion-icon>
+            <ion-label>Your Bookings</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="amuusesMenu">
+          <ion-item lines="none" routerLink="/tabs/tab5">
+            <ion-icon name="accessibility" slot="start"></ion-icon>
+            <ion-label>Become a Star</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="amuusesMenu">
+          <ion-item lines="none" routerLink="/tabs/tab4">
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label>Your Star Profiles</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="amuusesMenu">
+          <ion-item lines="none" routerLink="/amuuses/helps">
+            <ion-icon name="help" slot="start"></ion-icon>
+            <ion-label>Help</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-menu-toggle menu="amuusesMenu">
+      <ion-item lines="none" routerLink="/amuuses">
+        <ion-icon name="exit" slot="start"></ion-icon>
+        <ion-label>Log out</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center">
+          <p style="font-size: 10px">Poggers version 1.0.1 </p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>
