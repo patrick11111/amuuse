@@ -1,0 +1,105 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="amuusesMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-item lines="none" routerLink="/amuuses/logins">
+        <ion-avatar slot="end">
+          <img
+            src="https://www.pngitem.com/pimgs/m/522-5220445_anonymous-profile-grey-person-sticker-glitch-empty-profile.png"
+          />
+        </ion-avatar>
+      </ion-item>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 5</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!--  <app-explore-container name="Tab 5 page"></app-explore-container>-->
+
+  <div>
+    <p class="ion-text-center" style="font-size: 25px">Become a Stars</p>
+    <form #form="ngForm">
+      <ion-grid>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item class="ion-margin-bottom">
+              <ion-label position="stacked">What is your stage name?</ion-label>
+              <ion-input
+                type="email"
+                ngModel
+                name="email"
+                required
+                email
+                #emailField="ngModel"
+              ></ion-input>
+            </ion-item>
+
+            <ion-item class="ion-margin-bottom">
+              <ion-label position="stacked"
+                >What do you consider yourself as?</ion-label
+              >
+              <ion-input
+                type="text"
+                name="password"
+                ngModel
+                required
+                minlength="6"
+                #passwordField="ngModel"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="ion-margin-bottom">
+              <ion-label position="stacked">What is your talent?</ion-label>
+              <ion-select placeholder="Select One" value="music">
+                <ion-select-option value="music">Music</ion-select-option>
+                <ion-select-option value="dance">Dance</ion-select-option>
+                <ion-select-option value="comedy">Comedy</ion-select-option>
+                <ion-select-option value="magic">Magic</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="ion-margin-bottom">
+              <ion-label position="stacked">What are you guys about?</ion-label>
+              <ion-textarea rows="6"></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="dark">
+      <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button
+        color="light"
+        href="https://facebook.com/joostenszmalvin/"
+      >
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" href="https://youtube.com/vaserlatigo">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button
+        color="light"
+        href="https://www.instagram.com/vaserlatigo/"
+      >
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" href="https://wa.me/6287878390409">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" href="https://discord.gg/h5aGKW5s">
+        <ion-icon name="logo-discord"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

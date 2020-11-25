@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="authsMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentGrid()">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <p class="ion-text-center" style="font-size: 25px">Find Your Stars</p>
+    <!-- Comments Malvin: belum bisa untuk search-->
+    <ion-searchbar color="warning"></ion-searchbar>
+    <p class="ion-text-center" style="font-size: 18px">Categories</p>
+
+    <ion-grid>
+        <ion-list>
+          <ion-col>
+            <ion-slides pager="true" [options]="slideOpts">
+              <ion-slide>
+                <h1>Music</h1>
+                <ion-icon name="musical-notes"></ion-icon>
+              </ion-slide>
+              <ion-slide>
+                <h1>Magic</h1>
+                <ion-icon name="color-wand"></ion-icon>
+              </ion-slide>
+              <ion-slide>
+                <h1>Dance</h1>
+                <ion-icon name="walk"></ion-icon>
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+        </ion-list>
+    </ion-grid>
+
+    <p class="ion-text-center" style="font-size: 18px">Top Stars</p>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-list>
+          <ion-item *ngFor="let starsdetail of starsdetails" [routerLink]="['./', starsdetail.id]">
+            <ion-col>
+              <ion-img [src]="starsdetail.imageUrl"></ion-img>
+            </ion-col>
+            <ion-label>
+              <ion-card-title> {{ starsdetail.title }} </ion-card-title>
+              <ion-card-subtitle> {{ starsdetail.category }} </ion-card-subtitle>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

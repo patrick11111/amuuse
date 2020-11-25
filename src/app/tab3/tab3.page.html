@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="amuusesMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-item lines="none" routerLink="/amuuses/logins">
+        <ion-avatar slot="end">
+          <img src="https://www.pngitem.com/pimgs/m/522-5220445_anonymous-profile-grey-person-sticker-glitch-empty-profile.png" />
+        </ion-avatar>
+      </ion-item>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<!--  <app-explore-container name="Tab 3 page"></app-explore-container>-->
+
+  <ion-grid>
+    <p class="ion-text-center" style="font-size: 25px">Find Your Stars</p>
+    <!-- Comments Malvin: belum bisa untuk search-->
+    <ion-searchbar color="warning"></ion-searchbar>
+    <p class="ion-text-center" style="font-size: 18px">Categories</p>
+
+    <ion-grid>
+      <ion-list>
+        <ion-col>
+          <ion-slides pager="true" [options]="slideOpts">
+            <ion-slide>
+              <h1>Music</h1>
+              <ion-icon name="musical-notes"></ion-icon>
+            </ion-slide>
+            <ion-slide>
+              <h1>Magic</h1>
+              <ion-icon name="color-wand"></ion-icon>
+            </ion-slide>
+            <ion-slide>
+              <h1>Dance</h1>
+              <ion-icon name="walk"></ion-icon>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-list>
+    </ion-grid>
+
+    <p class="ion-text-center" style="font-size: 18px">Top Stars</p>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-list>
+          <ion-item *ngFor="let ta3 of tab3" [routerLink]="['./', ta3.id]">
+            <ion-col>
+              <ion-img [src]="ta3.imageUrl"></ion-img>
+            </ion-col>
+            <ion-label>
+              <ion-card-title> {{ ta3.title }} </ion-card-title>
+              <ion-card-subtitle> {{ ta3.category }} </ion-card-subtitle>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="dark">
+      <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light" href="https://facebook.com/joostenszmalvin/">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" href="https://youtube.com/vaserlatigo">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" href="https://www.instagram.com/vaserlatigo/">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" href="https://wa.me/6287878390409">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light" href="https://discord.gg/h5aGKW5s">
+        <ion-icon name="logo-discord"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
