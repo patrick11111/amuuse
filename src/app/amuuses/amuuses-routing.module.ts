@@ -35,7 +35,7 @@ const routes: Routes = [
   {
     path: 'helps',
     loadChildren: () => import('./helps/helps.module').then( m => m.HelpsPageModule)
-  }
+  },
 ];
 
 @NgModule({
